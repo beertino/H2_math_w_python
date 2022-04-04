@@ -3,19 +3,6 @@ from xmlrpc.client import Boolean
 from sympy import *
 from IPython.display import Math,display
 
-def make_fn(expr:str):
-    ''' Just a helper function to make a function given a rule expr 
-    '''
-    x = symbols('x')
-
-    class f(Function):
-        @classmethod
-        def eval(cls, x):
-            # Return the rule of the function 
-            return eval(expr)
-    
-    return f
-
 def print_inverse(f:Function):
     '''Print out the possible rules for the inverse of a function
     '''
